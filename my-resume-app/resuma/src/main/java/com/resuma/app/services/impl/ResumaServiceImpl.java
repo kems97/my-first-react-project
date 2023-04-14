@@ -1,8 +1,6 @@
 package com.resuma.app.services.impl;
 
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,12 +18,8 @@ public class ResumaServiceImpl implements ResumaService {
 	private ResumeRepository resumeRepository;
 
 	@Override
-	public void createResume(List<ResumeDto> listResumeDto) {
-		List<Resume> listResumes = new ArrayList<>();
-		for (ResumeDto resumeDto : listResumeDto) {
-			listResumes.add(new Resume(resumeDto.getId(), resumeDto.getNom()));
-		}
-		resumeRepository.saveAll(listResumes);
+	public void createResume(ResumeDto resumeDto) {
+		resumeRepository.save(new Resume(resumeDto.getId(), resumeDto.getNom()));
 	}
 
 	@Override

@@ -1,14 +1,13 @@
 package com.resuma.app.services.interfaces;
 
 import java.util.Collection;
-import java.util.List;
 
 import com.resuma.app.dto.ResumeDto;
 import com.resuma.app.entities.Resume;
 
 public interface ResumaService {
 
-	void createResume(List<ResumeDto> listResumeDto);
+	void createResume(ResumeDto resumeDto);
 
 	Collection<Resume> getAllResumes();
 

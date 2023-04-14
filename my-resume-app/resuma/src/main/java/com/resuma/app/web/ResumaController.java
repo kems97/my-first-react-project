@@ -1,7 +1,6 @@
 package com.resuma.app.web;
 
 import java.util.Collection;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,8 +20,8 @@ public class ResumaController {
 	private ResumaService resumaService;
 
 	@GetMapping("/create")
-	public void createResume(List<ResumeDto> listResumeDto) {
-		resumaService.createResume(listResumeDto);
+	public void createResume(ResumeDto resumeDto) {
+		resumaService.createResume(resumeDto);
 	}
 
 	@GetMapping("/read")
