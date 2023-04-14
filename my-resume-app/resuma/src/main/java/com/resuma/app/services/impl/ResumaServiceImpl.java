@@ -35,21 +35,21 @@ public class ResumaServiceImpl implements ResumaService {
 
 	@Override
 	public void updateResume(ResumeDto resumeDto) throws Exception {
-		Resume resume = getResumeById(resumeDto);
+		Resume resume = getResumeById(resumeDto.getId());
+		resume.setNom(resumeDto.getNom());
 		resumeRepository.save(resume);
 	}
 
 	@Override
-	public void deleteResume(ResumeDto resumeDto) throws Exception {
-		Resume resume = getResumeById(resumeDto);
+	public void deleteResume(int idResume) throws Exception {
+		Resume resume = getResumeById(idResume);
 		resumeRepository.delete(resume);
 	}
 
-	private Resume getResumeById(ResumeDto resumeDto) throws Exception {
-		int resumeId = resumeDto.getId();
-		Optional<Resume> resumeOpt = resumeRepository.findById(resumeId);
+	private Resume getResumeById(int idResume) throws Exception {
+		Optional<Resume> resumeOpt = resumeRepository.findById(idResume);
 		if (resumeOpt.isEmpty()) {
-			throw new Exception("No resume found with the id : " + resumeId);
+			throw new Exception("No resume found with the id : " + idResume);
 		}
 		Resume resume = resumeOpt.get();
 		return resume;

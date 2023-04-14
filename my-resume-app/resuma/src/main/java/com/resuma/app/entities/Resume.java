@@ -31,7 +31,7 @@ public class Resume {
 		return nom;
 	}
 
-	public void setNome(String nom) {
+	public void setNom(String nom) {
 		this.nom = nom;
 	}
 

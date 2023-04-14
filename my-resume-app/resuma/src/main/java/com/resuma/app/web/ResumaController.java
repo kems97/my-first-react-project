@@ -36,8 +36,8 @@ public class ResumaController {
 	}
 
 	@PostMapping("/delete")
-	public void deleteResume(ResumeDto resumeDto) throws Exception {
-		resumaService.deleteResume(resumeDto);
+	public void deleteResume(int idResume) throws Exception {
+		resumaService.deleteResume(idResume);
 
 	}
 
