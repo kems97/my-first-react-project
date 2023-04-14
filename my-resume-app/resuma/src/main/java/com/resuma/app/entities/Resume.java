@@ -9,7 +9,7 @@ public class Resume {
 	@Id
 	private Integer id;
 	private String nom;
-	
+
 	public Resume() {
 	}
 
