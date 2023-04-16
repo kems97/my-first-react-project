@@ -7,7 +7,7 @@ import com.resuma.app.entities.Resume;
 
 public interface ResumaService {
 
-	void createResume(ResumeDto resumeDto);
+	Resume createResume(ResumeDto resumeDto);
 
 	Collection<Resume> getAllResumes();
 

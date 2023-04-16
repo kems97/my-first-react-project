@@ -18,8 +18,8 @@ public class ResumaServiceImpl implements ResumaService {
 	private ResumeRepository resumeRepository;
 
 	@Override
-	public void createResume(ResumeDto resumeDto) {
-		resumeRepository.save(new Resume(resumeDto.getId(), resumeDto.getNom()));
+	public Resume createResume(ResumeDto resumeDto) {
+		return resumeRepository.save(new Resume(resumeDto.getId(), resumeDto.getNom()));
 	}
 
 	@Override
@@ -45,8 +45,7 @@ public class ResumaServiceImpl implements ResumaService {
 		if (resumeOpt.isEmpty()) {
 			throw new Exception("No resume found with the id : " + idResume);
 		}
-		Resume resume = resumeOpt.get();
-		return resume;
+		return resumeOpt.get();
 	}
 
 }
